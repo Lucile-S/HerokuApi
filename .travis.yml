@@ -10,13 +10,14 @@ deploy:
   api_key:
     secure: $HEROKU_API_KEY
   app: apisimplon
-
-script:
-  - docker tag cisaia/apisimplon registry.heroku.com/$HEROKU_APP_NAME/web
+ 
 
 deploy:
   provider: script
   script: 
+    # docker push cisaia/apisimplon;
+
+    # docker push registry.heroku.com/$HEROKU_APP_NAME/web;
     heroku container:push web --app $HEROKU_APP_NAME
     heroku container:release web --app $HEROKU_APP_NAME
   on:
