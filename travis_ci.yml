@@ -13,9 +13,7 @@ before_install:
     # login to docker registries (dockerhub + heroku)
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   # - echo "$HEROKU_PASSWORD" | docker login -u "$HEROKU_USERNAME" --password-stdin registry.heroku.com
-  - echo "$HEROKU_USERNAME" 
-  - echo "$HEROKU_PASSWORD" |  heroku login
-  - echo "$HEROKU_AUTH_TOKEN" 
+  - heroku login
   - heroku container:login
 
   script:
