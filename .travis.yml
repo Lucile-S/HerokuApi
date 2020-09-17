@@ -5,20 +5,14 @@ sudo: required
 
 services:
   - docker
-deploy:
-  provider: heroku
-  api_key:
-    secure: $HEROKU_API_KEY
-  app: apisimplon
- 
+
+before_install:
+
+script:
+    - echo 'foo'
 
 deploy:
-  provider: script
-  script: 
-    # docker push cisaia/apisimplon;
-
-    # docker push registry.heroku.com/$HEROKU_APP_NAME/web;
-    heroku container:push web --app $HEROKU_APP_NAME
-    heroku container:release web --app $HEROKU_APP_NAME
-  on:
-    branch: master
+    provider: heroku
+    api_key: $HEROKU_TOKEN
+    app : apilucile1
+    skip_cleanup: True
